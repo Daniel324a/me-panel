@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from "react";
 export const useFetch = (
   url,
   method = "get",
-  body = {},
+  body,
   headers = { "Content-Type": "application/json" },
   dependency
 ) => {

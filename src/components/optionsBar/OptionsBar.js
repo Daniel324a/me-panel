@@ -17,37 +17,9 @@ export const OptionsBar = () => {
 
   return (
     <div className="w-full h-12 flex gap-2 items-center justify-between">
-      <div className="flex gap-2">
-        <button
-          className={`
-        transition-all transform ease-in duration-150
-        outline-none w-12 h-12 material-icons
-        bg-blue-500 rounded-xl text-white dark:text-gray-800
-        hover:scale-95 hover:bg-blue-600 focus:outline-none
-      `}
-        >
-          add
-        </button>
-        <button
-          className={`
-        transition-all transform ease-in duration-150
-        outline-none w-12 h-12 material-icons
-        bg-yellow-500 rounded-xl text-white dark:text-gray-800
-        hover:scale-95 hover:bg-yellow-600 focus:outline-none
-      `}
-        >
-          edit
-        </button>
-        <button
-          className={`
-        transition-all transform ease-in duration-150
-        outline-none w-12 h-12 material-icons
-        bg-red-500 rounded-xl text-white dark:text-gray-800
-        hover:scale-95 hover:bg-red-600 focus:outline-none
-      `}
-        >
-          delete
-        </button>
+      <div className="flex gap-2 items-center text-3xl">
+        <i className="material-icons">work</i>
+        <h3 className="">Briefcase</h3>
       </div>
       <div className="flex items-center gap-2">
         <div className="w-12 h-12 rounded-full border-2 border-white dark:border-gray-400">

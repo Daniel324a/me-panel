@@ -11,7 +11,7 @@ import { AuthContext } from "../../utils/authProvider";
 
 const MySwal = withReactContent(Swal);
 
-export const LoginScreen = props => {
+export const LoginScreen = () => {
   const { auth, setAuth } = useContext(AuthContext);
   const [{ email, pass }, handleFormChange] = useForm({ email: "", pass: "" });
   const [loading, setLoading] = useState(false);
@@ -20,7 +20,12 @@ export const LoginScreen = props => {
     e.preventDefault();
 
     if (!email || !pass)
-      return MySwal.fire("Error", "Don't leave blank fields", "warning");
+      return MySwal.fire({
+        customClass: "dark:bg-gray-800",
+        title: "Error",
+        html: "Don't leave blank fields",
+        icon: "warning",
+      });
 
     const body = { email, pass };
     setLoading(true);
@@ -35,7 +40,12 @@ export const LoginScreen = props => {
         setLoading(false);
 
         if (!ok)
-          return MySwal.fire("Error", "Email or password incorrect", "warning");
+          return MySwal.fire({
+            customClass: "dark:bg-gray-800",
+            title: "Error",
+            html: "Email or password incorrect",
+            icon: "warning",
+          });
 
         localStorage.setItem("user", JSON.stringify(data));
         localStorage.setItem("token", token);

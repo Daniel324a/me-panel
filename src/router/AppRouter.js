@@ -1,6 +1,11 @@
 import React, { useContext } from "react";
 
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Redirect,
+  Route,
+  Switch,
+} from "react-router-dom";
 
 import { HomeScreen } from "../views/homeScreen/HomeScreen";
 import { LoginScreen } from "../views/loginScreen/LoginScreen";
@@ -15,6 +20,8 @@ export const AppRouter = () => {
       <Switch>
         <Route path="/login" component={LoginScreen} />
         <PrivateRouter exact path="/" isLogged={auth} component={HomeScreen} />
+
+        <Redirect to={"/" + (!auth && "login")} />
       </Switch>
     </Router>
   );
