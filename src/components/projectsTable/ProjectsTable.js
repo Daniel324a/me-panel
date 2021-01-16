@@ -18,7 +18,7 @@ export const ProjectsTable = () => {
       <div className="circular-loader mt-5 w-10 h-10"></div>
     </div>
   ) : (
-    <div className="border border-gray-300 shadow rounded-lg dark:border-gray-700">
+    <div className="border border-gray-300 shadow rounded-lg overflow-x-auto dark:border-gray-700">
       <table className="w-full h-auto table">
         <thead className="border-b border-gray-300 dark:border-gray-700">
           <tr>

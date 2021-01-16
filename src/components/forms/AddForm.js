@@ -20,7 +20,7 @@ export const AddForm = () => {
     link: "",
   });
 
-  const handleLogin = async () => {
+  const handleAdd = async () => {
     if (!name || !description || !date || !link)
       return MySwal.fire({
         customClass: "dark:bg-gray-800",
@@ -29,7 +29,13 @@ export const AddForm = () => {
         icon: "warning",
       });
 
-    const body = { name, description, date, link };
+    const body = {
+      name,
+      description,
+      date,
+      link,
+      token: localStorage.getItem("token"),
+    };
     setLoading(true);
 
     await fetch(`${api}addProject`, {
@@ -92,7 +98,7 @@ export const AddForm = () => {
         placeholder="Link"
       />
       <button
-        onClick={handleLogin}
+        onClick={handleAdd}
         className={`
           transition-all transform duration-100 ease-in
           mt-2 w-full h-10 rounded-lg outline-none
